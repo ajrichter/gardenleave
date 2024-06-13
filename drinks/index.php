@@ -64,3 +64,25 @@ function addDrink($name, $price) {
         echo "<td>" . $row["name"] . "</td>";
         echo "<td>" . $row["price"] . "</td>";
         echo "<td><a href='edit.php?id=" . $row["id"] . "'>Edit</a> | <a href='delete.php?id=" . $row["id"] . "'>Delete</a></td>";
+        echo "</tr>";
+      }
+      ?>
+    </tbody>
+  </table>
+
+  <!-- Add new drink form -->
+  <form action="add.php" method="post">
+    <label for="name">Drink Name:</label>
+    <input type="text" name="name" required><br><br>
+    <label for="price">Price:</label>
+    <input type="number" name="price" required><br><br>
+    <input type="submit" value="Add Drink">
+  </form>
+
+</body>
+</html>
+
+<?php
+// Close database connection
+mysqli_close($conn);
+?>
